@@ -1,10 +1,10 @@
+/* GENERAL */
 html {
 	height: 100%;
 }
 
 body {
 	width: 1000px;
-	text-align: center;
 	margin: auto;
 	background-color: gray;
 	height: 100%;
@@ -18,34 +18,47 @@ div {
 	border: 1px solid red;
 }
 
+/* MAIN PAGE */
 .vertical_divs {
 	width: 100%;
 	overflow: hidden;
 }
 
-.vertical_divs > .left {
-	width: 666px;
+.vertical_divs>.left {
+	width: 600px;
 	float: left;
 }
 
-.vertical_divs > .right {
-	margin-left: 666px;
+.vertical_divs>.right {
+	margin-left: 600px;
 }
 
+/* BORDER */
 #left_border {
 	background-color: #606060;
-	position: absolute;
+	position: fixed;
 	top: 0;
 	bottom: 0;
 	width: 50px;
-	margin-left: -0;
+	margin-left: -50px;
 }
 
+/* DETAILS */
 #details {
 	float: right;
 	position: relative;
 }
 
+#details:before {
+    content: '';
+    position: absolute;
+    top: 0; right: 0;
+    border-top: 40px solid gray;
+    border-left: 40px solid black;
+    width: 0;
+}
+
+/* REFERENCES */
 footer {
 	border: 1px solid green;
 }
