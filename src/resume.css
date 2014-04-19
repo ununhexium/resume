@@ -1,0 +1,51 @@
+html {
+	height: 100%;
+}
+
+body {
+	width: 1000px;
+	text-align: center;
+	margin: auto;
+	background-color: gray;
+	height: 100%;
+}
+
+header {
+	border: 1px solid blue;
+}
+
+div {
+	border: 1px solid red;
+}
+
+.vertical_divs {
+	width: 100%;
+	overflow: hidden;
+}
+
+.vertical_divs > .left {
+	width: 666px;
+	float: left;
+}
+
+.vertical_divs > .right {
+	margin-left: 666px;
+}
+
+#left_border {
+	background-color: #606060;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	width: 50px;
+	margin-left: -0;
+}
+
+#details {
+	float: right;
+	position: relative;
+}
+
+footer {
+	border: 1px solid green;
+}
