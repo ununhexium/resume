@@ -1,1 +1,17 @@
 @import url("base.css");
+
+body {
+	background-color: #fff;
+}
+
+#left_border {
+	display: none;
+}
+
+#left_border>._888 {
+	display: none;
+}
+
+footer>p:after{
+	content: ": https://www.iconfinder.com/";
+}

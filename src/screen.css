@@ -1,2 +1,77 @@
-/* GENERAL */
+
 @import url("base.css");
+
+
+a:hover {
+	color: #B8005C;
+	text-decoration: none;
+	text-transform: capitalize;
+}
+
+
+.skills .table span._20p:hover:nth-child(2n) {
+	background-color: #B8005C;
+}
+
+.skills .table span._20p:hover:nth-child(2n+1) {
+	background-color: #008F00;
+}
+
+.bar:hover {
+	background-color: #B8005C;
+}
+
+.bar_chart_area>.off:hover {
+	background-color: #008F00;
+}
+
+.bar_chart_area>.half:hover {
+	background-color: #008F00;
+}
+
+#left_border img:hover {
+	background-color: #B8005C;
+}
+
+/* BORDER */
+#left_border {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	width: 50px;
+	margin-left: -50px;
+	color: white;
+	font-weight: bolder;
+	text-align: center;
+	background: linear-gradient(to right, #888, #333 75%);
+	text-align: center;
+}
+
+#left_border>._888 {
+	background-color: #888888;
+	width: 8px;
+	height: 888px;
+	position: relative;
+	left: 1008px;
+	z-index: 888;
+	float: right;
+}
+
+#left_border>.links {
+	float: left;
+	position: relative;
+	top: 0;
+	left: 5px;
+	margin-top: 5px;
+}
+
+#left_border img {
+	background-color: #ccc;
+	border-radius: 3px 3px 3px 3px;
+}
+
+
+/* REFERENCES */
+footer {
+	background-color: #333;
+}
