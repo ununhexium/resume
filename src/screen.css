@@ -1,24 +1,57 @@
 /* GENERAL */
+
+@import
+	url(http://fonts.googleapis.com/css?family=Roboto:400&subset=latin,latin-ext)
+	;
+
 html {
+	font-family: 'Roboto', 'Trebuchet', sans-serif;
 	height: 100%;
 }
 
 body {
 	width: 1000px;
 	margin: auto;
-	background-color: gray;
+	background-color: #ccc;
 	height: 100%;
 }
 
 header {
-	border: 1px solid blue;
+	background-color: white;
+}
+
+header>.name {
+	text-align: center;
+	font-size: 4em;
+}
+
+header>p {
+	margin-right: 350px;
+	color: gray;
+	margin-left: 50px;
 }
 
 div {
-	border: 1px solid red;
+	/*border: 1px solid red;*/
+	
 }
 
 /* MAIN PAGE */
+.page {
+	background-color: white;
+}
+
+.page>.section>h1 {
+	background-color: #333;
+	color: white;
+	padding: 0.1em;
+	padding-left: 1em;
+	padding-right: 1em;
+	display: inline;
+	border-top-right-radius: 100px;
+	border-bottom-right-radius: 100px;
+}
+
 .vertical_divs {
 	width: 100%;
 	overflow: hidden;
@@ -33,32 +66,72 @@ div {
 	margin-left: 600px;
 }
 
+.vertical_divs>.right ul {
+	list-style: url("../rc/img/check_16.png");
+}
+
 /* BORDER */
 #left_border {
-	background-color: #606060;
 	position: fixed;
 	top: 0;
 	bottom: 0;
 	width: 50px;
 	margin-left: -50px;
+	color: white;
+	font-weight: bolder;
+	text-align: center;
+	background: linear-gradient(to right, #888, #333 75%);
+}
+
+#left_border>._888 {
+	background-color: #888888;
+	width: 8px;
+	height: 888px;
+	position: relative;
+	left: 1008px;
+	z-index: 888;
+	float:right;
+}
+
+#left_border>.links{
+	float:left;
+	position:absolute;
+	top:0;
 }
 
 /* DETAILS */
 #details {
 	float: right;
 	position: relative;
+	background-color: #ddd;
+	margin-top: -50px;
+	margin-right: 25px;
+	border-radius: 2em 1em 4em 0em;
 }
 
-#details:before {
-    content: '';
-    position: absolute;
-    top: 0; right: 0;
-    border-top: 40px solid gray;
-    border-left: 40px solid black;
-    width: 0;
+#details>.head h1 {
+	background-color: #333;
+	color: white;
+	width: 100%;
+	font-size: 1.5em;
+	border-radius: 1em 0 0 0;
+}
+
+#details>div>h1 {
+	text-align: center;
+	margin: 0;
+	font-weight: bold;
+}
+
+#details p {
+	margin: 0;
+}
+
+#details tr {
+	padding: 5px;
 }
 
 /* REFERENCES */
 footer {
-	border: 1px solid green;
+	background-color: #333;
 }
