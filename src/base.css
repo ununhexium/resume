@@ -1,6 +1,4 @@
-
 /* GENERAL */
-
 @import
 	url(http://fonts.googleapis.com/css?family=Roboto:400&subset=latin,latin-ext)
 	;
@@ -111,7 +109,7 @@ ul {
 .vertical_divs>.right {
 	margin-left: 550px;
 	padding-left: 40px;
-	width: 400px;
+	width: 380px;
 	font-size: 0.8em;
 	height: 100%;
 }
@@ -119,10 +117,17 @@ ul {
 .vertical_divs>.right>h2 {
 	font-size: 1.5em;
 	font-weight: normal;
+	margin-top:0;
 }
 
 .vertical_divs>.right ul {
-	list-style: url("../rc/img/check_16.png");
+	list-style: none;
+	padding-left: 0;
+}
+
+.vertical_divs>.right ul li:before {
+	font-size: large;
+	content: '\2713   ';
 }
 
 .lang_set>.lang_text {
@@ -300,6 +305,7 @@ ul {
 }
 
 footer p {
+	font-size: 0.7em;
 	margin: 0;
 	text-align: right;
 	padding-right: 1em;

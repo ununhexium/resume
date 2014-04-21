@@ -1,6 +1,4 @@
-
 @import url("base.css");
-
 
 a:hover {
 	color: #B8005C;
@@ -8,6 +6,13 @@ a:hover {
 	text-transform: capitalize;
 }
 
+.vertical_divs>.right ul li:hover:nth-child(2n):before {
+	color: #B8005C;
+}
+
+.vertical_divs>.right ul li:hover:nth-child(2n+1):before {
+	color: #008F00;
+}
 
 .skills .table span._20p:hover:nth-child(2n) {
 	background-color: #B8005C;
@@ -45,6 +50,7 @@ a:hover {
 	text-align: center;
 	background: linear-gradient(to right, #888, #333 75%);
 	text-align: center;
+	box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.5);
 }
 
 #left_border>._888 {
@@ -57,6 +63,10 @@ a:hover {
 	float: right;
 }
 
+#left_border>._888:hover {
+	background-color: #B8005C;
+}
+
 #left_border>.links {
 	float: left;
 	position: relative;
@@ -65,11 +75,14 @@ a:hover {
 	margin-top: 5px;
 }
 
+#left_border>.links>p:hover {
+	color: #008F00;
+}
+
 #left_border img {
 	background-color: #ccc;
 	border-radius: 3px 3px 3px 3px;
 }
-
 
 /* REFERENCES */
 footer {
