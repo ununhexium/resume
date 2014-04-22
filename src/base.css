@@ -104,6 +104,8 @@ ul {
 	margin: 0;
 	height: 100%;
 	vertical-align: middle;
+	font-size: 0.8em;
+	color: gray;
 }
 
 .vertical_divs>.right {
