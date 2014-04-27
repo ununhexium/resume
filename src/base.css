@@ -21,12 +21,13 @@ header {
 
 header>.name {
 	text-align: center;
-	font-size: 4em;
+	font-size: 3em;
 }
 
 header>p {
-	margin-right: 350px;
 	color: gray;
+	font-size: 1.3em;
+	margin-right: 350px;
 	margin-left: 50px;
 	margin-bottom: 0px;
 	padding-bottom: 50px;
