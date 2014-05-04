@@ -57,6 +57,14 @@
       <section>
 
         <section>
+          <h1>Electric Meters positioning</h1>
+          <p>GPS localization of electric meters</p>
+          <p>&#x25BC;</p>
+          <p>&#x25BC;</p>
+          <p>&#x25BC;</p>
+        </section>
+
+        <section>
           <h1>Capacities developed</h1>
           <ul>
             <li>Google maps API programming</li>
@@ -67,27 +75,19 @@
             <li>More in-depth knowledge of geodesic systems</li>
           </ul>
         </section>
-        
+
         <section>
-          <h1>Electric Meters positioning</h1>
-          <p>GPS localization of electric meters</p>
-          <p>&#x25BC;</p>
-          <p>&#x25BC;</p>
-          <p>&#x25BC;</p>
+          <h1>Objectives</h1>
+          <p>Find the positions of the electric meters on that path in order to enrich the SI database with
+            geo-localized items.</p>
+          <p>Will allow to localize hard-to-find counters (in forest, with odd numerotation, ambiguous addresses,
+            ...) for the next reading campaign.</p>
         </section>
 
         <section>
           <h1>Prototyping</h1>
           <img alt="GMaps over a french village" src="../../rc/img/gps_gmaps_path.png" />
           <p>Path of a technician in charge of the electric meter's reading.</p>
-        </section>
-
-        <section>
-          <h1>Goal</h1>
-          <p>Find the positions of the electric meters on that path in order to enrich the SI database with
-            geo-localized items.</p>
-          <p>Will allow to localize hard-to-find counters (in forest, with odd numerotation, ambiguous addresses,
-            ...) for the next reading campaign.</p>
         </section>
 
         <section>
@@ -137,6 +137,14 @@
       <section>
 
         <section>
+          <h1>Statistics display</h1>
+          <p>Google Maps-like display of statistical results</p>
+          <p>&#x25BC;</p>
+          <p>&#x25BC;</p>
+          <p>&#x25BC;</p>
+        </section>
+
+        <section>
           <h1>Capacities developped</h1>
           <ul>
             <li>Further Java SE 6 use</li>
@@ -146,14 +154,6 @@
             <li>SQL Loader</li>
             <li>Oracle and MySQL database modeling and exploitation</li>
           </ul>
-        </section>
-        
-        <section>
-          <h1>Statistics display</h1>
-          <p>Google Maps-like display of statistical results</p>
-          <p>&#x25BC;</p>
-          <p>&#x25BC;</p>
-          <p>&#x25BC;</p>
         </section>
 
         <section>
@@ -185,8 +185,92 @@
           <img alt="CCCBT 1" src="../../rc/img/browse_cccbt.png">
           <p>Exploration of the database's information.</p>
         </section>
-        
+
       </section>
+
+      <!-- STATISTICS RESULTS USE -->
+      <section>
+
+        <section>
+          <h1>Statistics use</h1>
+          <p>Electric station load prediction</p>
+          <p>&#x25BC;</p>
+          <p>&#x25BC;</p>
+          <p>&#x25BC;</p>
+        </section>
+
+        <section>
+          <h1>Capacities developed</h1>
+          <ul>
+            <li>Cooperation with a statistician for scripts written in <a href="http://www.r-project.org/"
+              target="_blank">R</a></li>
+            <li>Wrapping of R scripts inside a Java application</li>
+            <li><abbr title="Model View Controler">MVC</abbr></li>
+          </ul>
+        </section>
+
+        <section>
+          <h1>Objective</h1>
+          <ul>
+            <li>Develop a software for electric stations' load forecast</li>
+            <li>Reuse a statistical method to compute the forecast</li>
+            <li>Create a user-friendly GUI for exploitation</li>
+          </ul>
+        </section>
+
+        <section>
+          <h1>Processing</h1>
+          <img alt="Database filling schema" src="../../rc/img/working_queue.png">
+          <p>The jobs requested are queued an treated in parallel whenever possible.</p>
+        </section>
+
+        <section>
+          <h1>GUI</h1>
+          <img alt="CCCBT 1" src="../../rc/img/prediction_sections.png">
+          <p>The functionalities are grouped by theme:</p>
+          <ul>
+            <li>DB resources</li>
+            <li>Fabricated input (simulation)</li>
+            <li>Whether history and forecast</li>
+            <li>Prediction</li>
+            <li>Logging / errors reporting</li>
+          </ul>
+        </section>
+
+        <section>
+          <h1>GUI</h1>
+          <img alt="CCCBT 1" src="../../rc/img/prediction_app.png">
+          <p>User friendly interface to select the database's input (Electric station and subsection to predict).</p>
+        </section>
+
+        <section>
+          <h1>GUI</h1>
+          <img alt="CCCBT 1" src="../../rc/img/prediction_simulation.png">
+          <p>The user can create a fake curve and test the statistical model, see how it reacts and adapts.</p>
+        </section>
+
+        <section>
+          <h1>GUI</h1>
+          <img alt="CCCBT 1" src="../../rc/img/prediction_example.png">
+          <p>The original (red), prediction (blue), and confidence intervals (green/teal)</p>
+        </section>
+
+        <section>
+          <h1>GUI</h1>
+          <img alt="CCCBT 1" src="../../rc/img/prediction_status.png">
+          <p>As the application is multithreaded, gather data from different location and can run batches. This
+            status bar helps the user to know:</p>
+          <ul>
+            <li>What is currently beeing processed</li>
+            <li>How many tasks are processed</li>
+            <li>The remaining tasks to process</li>
+            <li>The backgroud jobs' statuses (weather, ...)</li>
+          </ul>
+        </section>
+
+      </section>
+
+
     </div>
 
   </div>
