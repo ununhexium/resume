@@ -14,7 +14,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
 <link rel="stylesheet" href="css/reveal.min.css">
-<link rel="stylesheet" href="css/nebula.css">
+<link rel="stylesheet" href="css/es.css">
 <link rel="stylesheet" href="css/theme/default.css" id="theme">
 
 <!-- For syntax highlighting -->
@@ -47,10 +47,222 @@
         <h1>Electricité de Strasbourg</h1>
         <p>My activities as an apprentice engineer</p>
         <p>
-          <small>Extracted from a repports publicly available in <a href="http://www.telecom-bretagne.eu/"
+          <small>Extracted from reports publicly available in <a href="http://www.telecom-bretagne.eu/"
             target="_blank">my school's</a> archives
           </small>
         </p>
+        <p style="font-size: 0.8em">
+          <small>Space: Next slide</small><br> <small>Arrows: Go to the Upper/Lower/Left/Right slide</small><br>
+          <small>Esc: Overview</small><br> <small>Enter: View the selected slide</small><br> <small>Home:
+            Begining of the presentation</small><br> <small>End: End of the presentation</small><br>
+        </p>
+      </section>
+
+      <!-- BUILDINGS DETECTION -->
+      <section>
+
+        <section>
+          <h1>Buildings Detection</h1>
+          <p>Finding buildings among a set of segments</p>
+          <p>&#x25BC;</p>
+          <p>&#x25BC;</p>
+          <p>&#x25BC;</p>
+        </section>
+
+        <section>
+          <h1>Capacities developed</h1>
+          <ul>
+            <li>Scientific methods</li>
+            <li>Algorithm conception and qualification</li>
+          </ul>
+        </section>
+
+        <section>
+          <h1>Objective</h1>
+          <p>Detect buildings on former paper printed paged maps</p>
+          <img alt="" src="../../rc/img/detection_final_objective.png">
+          <p>This is required to determine the proportion of building having electric access points inside their
+            walls.</p>
+        </section>
+
+        <section>
+          <h1>Result</h1>
+          <p>Detects buildings with 96% accuracy</p>
+        </section>
+
+        <section>
+          <h1>Detail</h1>
+          <p>The following slides detail how this method works</p>
+          <p>
+            You may skip it and go to the next section: <a href="#/2">GPS localization</a>.
+          </p>
+        </section>
+
+        <section>
+          <h1>Example 1</h1>
+          <img alt="Buildings on a map" src="../../rc/img/detection_example1.png">
+          <p>A case with nice drawn agglomerated buildings.</p>
+        </section>
+
+        <section>
+          <h1>Example 2</h1>
+          <img alt="Buildings on a map" src="../../rc/img/detection_example2.png">
+          <p>The vertical line of points is typically what happens when a building is spread over 2 sheets of paper.</p>
+          <p>Paper scan also has another drawback: if the threshold for the segments' detection was not correctly
+            set, a single segment may be split into several smaller segments or a segments may be constituted of many
+            other stacked segments.</p>
+        </section>
+
+        <section>
+          <h1>Example 3</h1>
+          <img alt="Buildings on a map" src="../../rc/img/detection_example3.png">
+          <p>The "hole" at the bottom of the building is where the address number (absent from this segments layer)
+            is located.</p>
+          <p>You can also notice the vertical AND horizontal points alignments: this building was spread over 4
+            paper sheets.</p>
+        </section>
+
+        <section>
+          <h1>Discovery</h1>
+          <p>As you can see, all the buildings we have to detect are identified by a more or less well defined
+            hatching and surrounded by the segments representing theirs walls.</p>
+          <p>The first goal is to detect this pattern</p>
+          <p>&#x21d2; Looking for existing algorithms and scientific papers that could provide indication.</p>
+        </section>
+
+        <section>
+          <h1>DBSCAN</h1>
+          <img height="300px" alt="DBSCAN example" src="../../rc/img/DBSCAN-Illustration.svg">
+          <p>Density-Based Spatial Clustering of Applications with Noise is an algorithm to detect clusters of
+            points based on their density.</p>
+          <p>It is possible to adapt this algorithm to take into account the distance between segments and their
+            orientation</p>
+        </section>
+
+        <section>
+          <h1>Result</h1>
+          <img alt="DBSCAN segments example" src="../../rc/img/detection_dbscan_seg.png">
+          <p>Parallel and close lines are detected correctly but artifacts are still present: buildings are by far
+            not the only geometric shape with parallel lines.</p>
+        </section>
+
+        <section>
+          <h1>Filtering</h1>
+          <p>The previous image already had segments filtered out based on their length, parallelism, regularity,
+            ...</p>
+          <img alt="DBSCAN segments example" src="../../rc/img/detection_filter1.png"> <img
+            alt="DBSCAN segments example" src="../../rc/img/detection_filter2.png">
+          <p>Here are example of segments that were filtered out: roads' edges and text</p>
+        </section>
+
+        <section>
+          <h1>OIGBHT Example</h1>
+          <img alt="OIGBHT example" src="../../rc/img/oigbht.png">
+          <p>It transforms parallel lines into points sets. A hatching with a given angle will be represented by a
+            vertical set of points at that angle with regularly spaced points.</p>
+        </section>
+
+        <section>
+          <h1>Adapted OIGBHT</h1>
+          <p>This formula can be adapted to suit the need we have here: finding sets of almost (angle difference of
+            $\alpha$) parallel segments</p>
+          <p>$$OIGBHT(\theta_1, \rho_1, \theta_2, \rho_2) = \begin{cases} (\theta_1, |\rho_2-\rho_1|)& \text{if }
+            |\theta_2 - \theta_1| < \alpha \\ undef & \text{otherwise} \end{cases}$$</p>
+        </section>
+
+        <section>
+          <h1>OIGBHT's result</h1>
+          <img alt="OIGBHT example" src="../../rc/img/oigbht_alpha.png"> <img alt="OIGBHT example"
+            src="../../rc/img/oigbht_alpha_buildings.png">
+          <p>The result of this second formula shows us the sets of aligned segments.</p>
+        </section>
+
+        <section>
+          <h1>OIGBHT's usage</h1>
+          <img alt="DBSCAN segments example" src="../../rc/img/detection_dbscan_seg.png">
+          <p>This second way to detect segments is used as a filter of the DBSCAN algorithm's output. Resulting in
+            this nicely cleaned sets of hatching.</p>
+        </section>
+
+        <section>
+          <h1>Edges detection</h1>
+          <p>Now we need to detect the edges of the buildings. Methods used:</p>
+          <ol>
+            <li>Get the edges located near the hatching and try to make a building from it</li>
+            <li>Subdivide / combine / fill existing segments to create the edges of a building</li>
+            <li>Genetic algorithm</li>
+            <li>Alpha hull</li>
+            <li>Ant's colony-based algorithm</li>
+            <li>Graph (math) based solution</li>
+          </ol>
+        </section>
+
+        <section>
+          <h1>Basics</h1>
+          <img alt="DBSCAN segments example" src="../../rc/img/detection_basic.png">
+          <p>The basic method outputs goods results but works only on 30% of the cases.</p>
+        </section>
+
+        <section>
+          <h1>Genetic algorithm</h1>
+          <img alt="DBSCAN segments example" src="../../rc/img/detection_genetic.png">
+          <p>The genetic methods work relatively well for buildings with simple shapes</p>
+        </section>
+
+        <section>
+          <h1>Alpha Hull</h1>
+          <img alt="DBSCAN segments example" src="../../rc/img/detection_hull.png">
+          <p>For every case that is too complicated for other algorithms: build a shape around the detected hatching</p>
+        </section>
+
+        <section>
+          <h1>Others</h1>
+          <p>The other algorithms were eliminated for the following reasons:</p>
+          <ul>
+            <li>Graph-based solution: too time consuming</li>
+            <li>Ants colony based algorithm: unstable results</li>
+          </ul>
+        </section>
+
+        <section>
+          <h1>False Positive</h1>
+          <img alt="DBSCAN segments example" src="../../rc/img/detection_false_positive.png">
+          <p>Typical false positive case: parallel lines everywhere deceives the hatching detection algorithm.</p>
+        </section>
+
+        <section class="results_table">
+          <h1>Results</h1>
+          <p>Checking the algorithm's results gives the following table:</p>
+          <table>
+            <thead>
+              <tr>
+                <td colspan="2" class="no_border"></td>
+                <td colspan="2" class="head">Estimated</td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td colspan="2" class="no_border"></td>
+                <td>In</td>
+                <td>Out</td>
+              </tr>
+              <tr>
+                <td rowspan="2" class="head">Real</td>
+                <td>In</td>
+                <td>541</td>
+                <td>23</td>
+              </tr>
+              <tr>
+                <td>Out</td>
+                <td>33</td>
+                <td>1098</td>
+              </tr>
+            </tbody>
+          </table>
+          <p>Succes rate:</p>
+          <p>$${{541+1098} \over {541+1098+33+23}} = 0.96$$</p>
+        </section>
+
       </section>
 
       <!-- ELECTRIC METERS -->
@@ -269,7 +481,6 @@
         </section>
 
       </section>
-
 
     </div>
 

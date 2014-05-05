@@ -1,0 +1,17 @@
+.results_table>table {
+	margin: auto;
+	padding: 1em;
+	border-collapse: collapse;
+}
+
+.results_table>table td {
+	vertical-align: middle;
+	padding: 0.5em;
+	border: 1px solid white;
+	background-color: #555558;
+}
+
+.results_table .no_border {
+	border: none;
+	background-color: transparent;
+}
