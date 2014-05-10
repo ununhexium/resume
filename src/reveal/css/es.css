@@ -15,3 +15,20 @@
 	border: none;
 	background-color: transparent;
 }
+
+.resume_link {
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 9999;
+}
+
+.resume_link a {
+	font-size: 0.8em;
+	color: white;
+}
+
+.resume_link a: hover {
+	font-size: 0.8em;
+	color: white;
+}
