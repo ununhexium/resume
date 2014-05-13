@@ -120,7 +120,7 @@ ul {
 .vertical_divs>.right>h2 {
 	font-size: 1.5em;
 	font-weight: normal;
-	margin-top:0;
+	margin-top: 0;
 }
 
 .vertical_divs>.right ul {
@@ -214,6 +214,26 @@ ul {
 	font-size: 0.3em;
 	text-align: center;
 	vertical-align: top;
+}
+
+.skills .right>ul>li {
+    list-style-type: none;
+    width: 50%;
+}
+
+li.left {
+    float: left;
+}
+
+li.right {
+    float: right;
+}
+
+@media only screen and (max-width: 480px) {
+    .left, .right {
+        float: none;
+        width: 100%;
+    }
 }
 
 /* GRAPHS */

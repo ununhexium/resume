@@ -1,9 +1,5 @@
 @import url("base.css");
 
-body {
-	background-color: #fff;
-}
-
 #left_border {
 	display: none;
 }
@@ -14,4 +10,20 @@ body {
 
 footer>p:after{
 	content: ": https://www.iconfinder.com/";
+}
+
+.page>.section>h1 {
+	color: black;
+	box-shadow: none;
+}
+
+.bar_chart_area{
+	display:none;
+}
+
+.skills .table span.items {
+	background-color: #fff;
+	color: black;
+	border-top-right-radius: none;
+	border-bottom-right-radius: none;
 }
