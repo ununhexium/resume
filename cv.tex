@@ -1,0 +1,193 @@
+%!TEX TS-program = xelatex
+\documentclass[]{friggeri-cv}
+\usepackage{afterpage}
+\usepackage{hyperref}
+\usepackage{color}
+\usepackage{xcolor}
+\usepackage{smartdiagram}
+\usepackage{fontspec}
+% if you want to add fontawesome package
+% you need to compile the tex file with LuaLaTeX
+% References:
+%   http://texdoc.net/texmf-dist/doc/latex/fontawesome/fontawesome.pdf
+%   https://www.ctan.org/tex-archive/fonts/fontawesome?lang=en
+%\usepackage{fontawesome}
+\usepackage{metalogo}
+\usepackage{dtklogos}
+\usepackage[utf8]{inputenc}
+\usepackage{tikz}
+\usetikzlibrary{mindmap,shadows}
+\hypersetup{
+    pdftitle={},
+    pdfauthor={},
+    pdfsubject={},
+    pdfkeywords={},
+    colorlinks=false,           % no lik border color
+    allbordercolors=white       % white border color for all
+}
+\smartdiagramset{
+    bubble center node font = \footnotesize,
+    bubble node font = \footnotesize,
+    % specifies the minimum size of the bubble center node
+    bubble center node size = 0.0cm,
+    %  specifies the minimum size of the bubbles
+    bubble node size = 1.8cm,
+    % specifies which is the distance among the bubble center node and the other bubbles
+    distance center/other bubbles = 0.8cm,
+    % sets the distance from the text to the border of the bubble center node
+    distance text center bubble = 0.2cm,
+    % set center bubble color
+    bubble center node color = pblue,
+    % define the list of colors usable in the diagram
+    set color list = {materialcyan, orange, green, materialteal, materialamber, purple, materiallime},
+    % sets the opacity at which the bubbles are shown
+    bubble fill opacity = 1.0,
+    % sets the opacity at which the bubble text is shown
+    bubble text opacity = 1.0,
+}
+
+\addbibresource{bibliography.bib}
+\RequirePackage{xcolor}
+\definecolor{pblue}{HTML}{0395DE}
+
+\begin{document}
+\header{Christophe}{Loiseau}
+      {Java Development Consultant}
+      
+% Fake text to add separator      
+\fcolorbox{white}{gray}{\parbox{\dimexpr\textwidth-2\fboxsep-2\fboxrule}{%
+.....
+}}
+
+% In the aside, each new line forces a line break
+\begin{aside}
+  \includegraphics[scale=0.18]{img/circle_650.png}
+  \section{Address}
+    Frankfurt am Main
+    Germany
+    ~
+  \section{Contact}
+    +49 176 35666943
+    ~
+  \section{Mail}
+    \href{mailto:christophe.loiseau.fr@gmail.com}{\textbf{christophe.loiseau.fr}\\@gmail.com}
+    ~
+  \section{Web \& Git}
+    \href{http://www.linkedin.com/in/christophe-loiseau-it}{LinkedIn}
+    \href{https://github.com/ununhexium}{GitHub}
+    ~
+  % use  \hspace{} or \vspace{} to change bubble size, if needed
+  \section{Programming}
+    \smartdiagram[bubble diagram]{
+        \textbf{Soft.}\\\textbf{Dev.},
+        \textbf{HTML}\\\textbf{CSS},
+        \textbf{Spring}\\\textbf{MVC}\\\textbf{Shell},
+        \textbf{Python}\\\textbf{Bash},
+        \textbf{Java}\\\textbf{Kotlin},
+        \textbf{Maven}\\\textbf{Gradle},
+        \textbf{Jira}\\\textbf{Plugin}
+    }
+    ~
+  \section{Soft Skills}
+    \smartdiagram[bubble diagram]{
+        \textbf{Team}\\\textbf{Player},
+        \textbf{Curiosity},
+        \textbf{Problem}\\\textbf{Solving},
+        \textbf{Organize},
+        \textbf{Scrum}
+    }
+    ~
+\end{aside}
+~
+\section{Experience}
+\begin{entrylist}
+  \entry
+    {02/18 - Now}
+    {Java Software Engineer}
+    {Amadeus GmbH}
+    {Development of a JIRA plugin to connect it to an older custom ticketing system. Monitoring and KPI instrumentation.\\
+    \\
+    Technologies: Java 8, Kotlin, Spring(Boot, Shell, MVC), Maven, Gradle \\
+    Environment: Linux, JIRA}
+  \entry
+    {11/16 - 12/17}
+    {Java Software Engineer}
+    {Amadeus GmbH}
+    {Development of a command line tool to automate the synchronization process between a ticket management system and JIRA. Custom query language parsing with ANTLR 4. Reverse engineering of the existing ticketing software to better how it manages tickets and interacts with the central database. Developing an adapter for Agosense Symphony to bridge from a REST API to BPEL and SOAP consumers.\\
+    \\
+    Technologies: Kotlin, Java 8 and 6, WSDL, SOAP, Maven, ANTLR4, REST, Batch, Windows Services, Thymeleaf, Spring (Boot, Configuration, CLI) \\
+    Methodologies: Scrum, Test Driven Development}
+    \entry
+    {07/14 - 10/15}
+    {Dev OPS Engineer}
+    {Amadeus GmbH}
+    {Software development and maintenance in Amadeus IT development support team.
+Development servers configuration, update, deployment and administration.
+Eclipse plugin development for tooling integration.\\
+	\\
+	Developed skills: Java, Eclipse Equinox framework, Puppet, SuSE Linux Enterprise Edition, Shell}
+    \entry
+    {12/12 - 06/14}
+    {Software Design and Development Engineer}
+    {Abylsen, for Amadeus IT}
+    {Software development and maintenance in Amadeus IT development support team.
+Development and maintenance of development tools: pull request manager, code review tool, Eclipse plugin.
+Provided support and training for maintained applications.}
+    \entry
+    {09/09 - 09/12}
+    {IT Engineer - Apprentice}
+    {Electricité de Strasbourg}
+    {Detection of building on a hand-drawn map. Statistician and PHD support.}
+    \entry
+    {09/07 - 08/09}
+    {Networks and Telecom. Technician - Apprentice}
+    {Electricité de Strasbourg}
+    {Maintenance of fiber optics, radio and Ethernet networks.}
+\end{entrylist}
+
+\newpage
+
+\section{Education}
+\begin{entrylist}
+  \entry
+    {2009 - 2012}
+    {Master degree in computer science, networks and telecommunications}
+    {Ecole nationale supérieure des Télécommunications de Bretagne}
+    {The Télécom Bretagne branch of the IMT Atlantique apprenticeship programme seeks to train high level engineering graduates who are operational and have a broad spectrum of technical experience, covering IT, networks and telecommunications. It prepares future information, communication and network system architects and engineers, as well as managers for the international market.\\}
+  \entry
+    {2007 - 2009}
+    {Networks and Telecommunications technical degree}
+    {IUT de Colmar}
+    {Networks and telecommunications technical degree qualification in 2 years. Centered around networks, with Telecommunications and Programmming courses.\\}
+  \entry
+    {2007}
+    {Bacalaureat}
+    {Lycee Bartholdi}
+    {High school scientific studies with math option.}
+\end{entrylist}
+
+\begin{aside}
+~
+~
+~
+  \section{OS Preference}
+    \textbf{GNU/Linux}\includegraphics[scale=0.40]{img/5stars.png}
+    \textbf{Windows}\includegraphics[scale=0.40]{img/1stars.png}
+    ~
+  \section{Languages}
+    \textbf{English}{: Professional}
+    \textbf{French}{: Native}
+    \textbf{German}{: Beginner}
+    ~
+\end{aside}
+
+\section{Certifications}
+\begin{entrylist}
+  \entry
+    {2011}
+    {TOIEC}
+    {Score 960}
+    {}
+\end{entrylist}
+
+\end{document}
